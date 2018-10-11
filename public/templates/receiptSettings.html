@@ -1,0 +1,201 @@
+<div id="receipt-settings-wrapper" <%= (App.rtl ? 'style="direction:rtl"' : '') %>>
+    <div class="row">
+        <div class="col s12" style="padding-top: 25px; height: 1000px;">
+            <div class="" id="receipt-settings-form" style="display: none; ">
+                <div id="receipt-settings-form-content">
+                    <form id="receipt_settings" style="display: none;">
+                        <img class="infoIcon" src="img/Receipts.png" alt="" style="float: right; padding-left: 30px; max-width: 100%">
+                        <h3 align="right" style="color: black;">{Literal}Receipt Settings{/Literal}</h3> 
+                        
+                        <div class="row">
+                            <div class="col s12 m5" style="float: right; color: black;">
+                                <p>{Literal}Here you will set up how your receipts will look when they print out{/Literal}. {Literal}Select which station youll be printing from on the left and pick your settings{/Literal}.</p>
+                            </div>
+                        </div>
+                        <div class="save lighten-4" align="right" style="padding-bottom: 50px;">
+                            <a class="waves-effect waves-light left btn green proceed-button">{Literal}PROCEED TO ITEM SETUP{/Literal}</a>
+                            <a class="waves-effect waves-light  btn ap-blue previous-button">{Literal}RETURN TO POS USERS{/Literal}</a>
+                        </div>
+                        <div class="column">
+                            <div class="s12" id="inputColumn" style="float: left; width: 50%; height: 300px; padding-left: 200px;">
+                                <div class="s12 m5" >
+                                    <div class="input-field" style="padding-bottom: 30px;" align="left">
+                                        <h6 style="float: left; padding-left: 15%; color: black">{Literal}Print Item SKU{/Literal}</h6>
+                                        <label class="inline">
+                                            <input type="checkbox" id="sku" <%= receiptSettings.printItemSku ? 'checked': '' %>>
+                                            <span style="color: black;">&nbsp</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="s12 m5">
+                                    <div class="input-field"  style="padding-bottom: 30px;">
+                                        <h6 style="float: left; padding-left: 15%; color: black">{Literal}Print Company Logo{/Literal}</h6>
+                                        <label class="inline">
+                                            <input type="checkbox" id="printLogo" <%= receiptSettings.printLogo ? 'checked': '' %>>
+                                            <span style="color: black;">&nbsp</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="s12 m5">
+                                    <div class="input-field" style="padding-bottom: 75px;">
+                                        <h6 id="printCompanyDetailsText" style="float: left; padding-left: 15%; color: black">{Literal}Print Company Details{/Literal}</h6>
+                                        <label class="inline">
+                                            <input type="checkbox" id="printCompanyDetails" <%= receiptSettings.printCustomerDetails ? 'checked': '' %>>
+                                            <span style="color: black;">&nbsp</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="input-field" style="padding-bottom: 80px; float: left; width: 45%">
+                                    <div class="s12 m6">
+                                        <div class="input-field" style="padding-bottom: 25px; left: 10%" id="dateTimeSelect">
+                                            <% var today = moment().hours(17).minutes(00); %>
+                                            <select id="dateTimeFormat">
+                                                <option value="" disabled>{Literal}Choose one option{/Literal}</option>
+                                                <option value="MM-dd-yy HH:mm" <%= (receiptSettings.dateTimeFormat === 'MM-dd-yy HH:mm' ? 'selected' : '') %>>MM-DD-YY HH:mm</option>
+                                                <option value="MM/dd/yy HH:mm" <%= (receiptSettings.dateTimeFormat === 'MM/dd/yy HH:mm' ? 'selected' : '') %>>MM/DD/YY HH:mm</option>
+                                            </select>
+                                            <label>{Literal}Date{/Literal}/{Literal}Time Format{/Literal}</label>
+                                        </div>
+                                    </div>
+                                    <div class="s12 m6">
+                                        <div class="input-field" style="padding-bottom: 45px; left: 10%">
+                                            <input id="customMessage" value="<%= receiptSettings.receiptMessage %>" type="text" maxlength="48">
+                                            <label for="customMessage" class="active">{Literal}Custom message{/Literal}</label>
+                                        </div>
+                                    </div>
+                                    <div class="s12 m6">
+                                        <div class="input-field" style="padding-bottom: 45px; left: 10%">
+                                            <input id="savingsMessage" value="<%= receiptSettings.savingsMessage %>" type="text" maxlength="48">
+                                            <label for="savingsMessage" class="active">{Literal}Savings message{/Literal}</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="s12" id="recieptPreview" style="float: left; width: 30%; padding: 10px; background-color: white; color: black;">
+                                <img class="infoIcon" id="previewLogo" src="img/YourLogoHere.jpg" alt="" style="width: 120px; display: none; margin: 0 auto;">
+                                <div id="companyInfo" style="margin-top: 20px; text-align: center; width: 100%; display: none;">
+                                    <strong>{Literal}IsraCard{/Literal}</strong>
+                                    <br>
+                                    250 E. Wilson Bridge Way
+                                    <br>
+                                    Suite 190
+                                    <br>
+                                    Worthington, OH 43085
+                                    <br>
+                                    800-906-5010
+                                </div>
+                                <div style="margin-top:10px; margin-left:5%; width:100%; padding:5px 0 5px 0; border-top:3px solid black; border-bottom:3px solid black;">
+                                    <div id="dateTime1" style="display:inline-block; width: 49%;"> 
+                                        01-01-2018 14:00
+                                    </div>
+                                    <div id="dateTime2" style="display: none; width: 49%;">
+                                        01/01/2018 14:00
+                                    </div>
+                                    <div style="display:inline-block; text-align:left; width:49%;">
+                                        {Literal}ADMIN{/Literal}
+                                    </div>
+                                </div>
+                                <div style="margin-top:10px; margin-left:5%; width:100%; padding:5px 0 50px 0; border-bottom:3px solid black;">
+                                    <div id="hideSku" style="display:inline-block; width: 49%;">
+                                        Jalepeno Poppers
+                                    </div>
+                                    <div id="showSku" style="display: none; width: 49%;">
+                                        012345 Jalepeno Poppers
+                                    </div>
+                                    <div id="divPrice1" style="display: inline-block; text-align:left; width: 49%;"> 
+                                        $6.49
+                                    </div>
+                                    <div id="divPrice2" style="display: none; text-align:left; width: 49%;"> 
+                                        $6.491
+                                    </div>
+                                    <div id="divPrice3" style="display: none; text-align:left; width: 49%;"> 
+                                        $6.4915
+                                    </div>
+                                    <div id="qtyPriceBlock" style="margin-right: 5%">
+                                        <div id="qty1" style="display: inline-block">
+                                            2.0 @ 
+                                        </div>  
+                                        <div id="qty2" style="display:none;">
+                                            2.00 @ 
+                                        </div> 
+                                        <div id="qty3" style="display:none;">
+                                            2.000 @ 
+                                        </div> 
+                                        <div id="qty4" style="display:none;">
+                                            2.0000 @ 
+                                        </div> 
+                                        <div id="qtyPrice1" style="display: inline-block;">
+                                            $3.24
+                                        </div>
+                                        <div id="qtyPrice2" style="display: none;">
+                                            $3.246
+                                        </div>
+                                        <div id="qtyPrice3" style="display: none;">
+                                            $3.2462
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top:10px; margin-left:5%; width: 100%;"> 
+                                    <div style="display:inline-block; width:49%;">
+                                        {Literal}Item Count{/Literal}: 1
+                                    </div>
+                                    <div id="subTotal1" style="display: inline-block; text-align: left; width: 49%;">
+                                        {Literal}Subtotal{/Literal}: $6.49
+                                    </div>
+                                    <div id="subTotal2" style="display: none; text-align: left; width: 49%;">
+                                        {Literal}Subtotal{/Literal}: $6.491
+                                    </div>
+                                    <div id="subTotal3" style="display: none; text-align: left; width: 49%;">
+                                        {Literal}Subtotal{/Literal}: $6.4915
+                                    </div>
+                                    <div id="tax1" style="display: inline-block; text-align: left; width: 99%;">
+                                        {Literal}Tax{/Literal}: $0.44
+                                    </div>
+                                    <div id="tax2" style="display: none; text-align: left; width: 99%;">
+                                        {Literal}Tax{/Literal}: $0.442
+                                    </div>
+                                    <div id="tax3" style="display: none; text-align: left; width: 99%;">
+                                        {Literal}Tax{Literal}: $0.4423
+                                    </div>
+                                    <div style="margin-top:10px; margin-right:70%; padding:5px 0 5px 0; border-top:3px solid black;"></div>
+                                </div>
+                                <div style="width:100%;">
+                                    <div style="display:inline-block; text-align:right; width:49%;">
+                                        {Literal}Receipt{/Literal}: 24407
+                                    </div>
+                                    <div id="total1" style="display: inline-block; text-align: left; width: 99%;">
+                                        {Literal}Total{/Literal}: $6.93
+                                    </div>
+                                    <div id="total2" style="display: none; text-align: left; width: 99%;">
+                                        {Literal}Total{/Literal}: $6.933
+                                    </div>
+                                    <div id="total3" style="display: none; text-align: left; width: 99%;">
+                                        {Literal}Total{/Literal}: $6.933
+                                    </div>
+                                </div>
+                                <div style="margin-top:60px; margin-left:5%; width:100%; padding:5px 0 5px 0; border-top:3px solid black;">
+                                    <div style="text-align:center; width:99%; font-weight:bold;">
+                                        <div id="divReceiptMessage"></div>
+                                    </div>
+                                </div> 
+                                <div style="margin-top:20px; width:100%; text-align:center; font-weight:bold;">
+                                    {Literal}Call Number{/Literal}: 48
+                                </div>
+                                <div style="margin-top:10px; width:100%; text-align:center; font-weight:bold;">
+                                    <div id="divSavingsMessage"></div>
+                                </div>
+                            </div>
+                        </div>   
+                    </form>
+                </div>         
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="navigation-keys">
+    <a class="dot button waves-effect waves-light receipt-settings-button"></a>
+</div>
+

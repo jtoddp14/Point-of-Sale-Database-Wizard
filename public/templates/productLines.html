@@ -1,0 +1,51 @@
+<div id="product-lines-wrapper" <%= (App.rtl ? 'style="direction:rtl"' : '') %> >
+    <img class="infoIcon" src="img/Items.png" alt="" style="float: right; padding-left: 30px; max-width: 100%; padding-top: 25px;">
+    <h3 align="right" style="padding-top: 25px;">{Literal}Product Lines{/Literal}</h3> 
+    
+    <div class="row">
+        <div class="col s12 m6" style="float: right;">
+            <p>{Literal}The first step in setting up the items you sell in your POS will be to define your Product Lines{/Literal}. {Literal}Product lines will help you group your items together{/Literal}, {Literal}giving set characteristics to each item the product line{/Literal}. {Literal}This will help you quickly set up your items and more later{/Literal}</p>
+        </div>
+    </div>
+
+    <div class="save lighten-4" align="right" style="padding-bottom: 50px;">
+        <a class="waves-effect waves-light left btn green proceed-button">{Literal}PROCEED TO ITEM SETUP{/Literal}</a>
+        <a class="waves-effect waves-light  btn ap-blue previous-button">{Literal}RETURN TO RECEIPT SETTINGS{/Literal}</a>
+    </div>
+
+    <div class="row">
+        <% _.each(productLines, function(productLine) { %>
+        <div class="col s12 m3 xl2" style="padding-left: 200px;">
+            <div class="card-panel card-panel-entity z-depth-2 sequence-card hoverable white-text <%= productLine.cardStyleClass %> waves-effect waves-light"
+                data-id="<%= productLine.id %>" data-selected='0' style="max-width: 200px; min-width: 200px">
+                <div>
+                    <div class="row description truncate">
+                        <%= productLine.description %>
+                    </div>
+                    <div class="row type truncate">
+                        Type: <%= productLine.itemType %>
+                    </div>
+                    <div class="row menu-page truncate">
+                        Menu Page: <%= productLine.menuPageName %>
+                    </div>
+                </div>
+                <div class="edit" style="display: none">
+                    <a href="#product-line-form-modal" class="modal-trigger btn-floating btn-large waves-effect waves-light ap-dark-blue edit-product-line-trigger"
+                        data-id="<%= productLine.id %>">
+                        <i class="material-icons">edit</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
+
+<div id="product-line-form-modal" class="modal modal-fixed-footer product-lines-modal" style="max-height: 100%">
+    
+</div>
+    
+
+<a href="#product-line-form-modal" class="modal-trigger btn-floating btn-large waves-effect waves-light green floating-action-button-fixed add-product-line">
+    <i class="material-icons">add</i>
+</a>

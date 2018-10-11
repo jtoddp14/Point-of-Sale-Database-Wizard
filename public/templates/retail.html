@@ -1,0 +1,81 @@
+<div id="retail-wrapper" <%= (App.rtl ? 'style="direction:rtl"' : '') %>>
+    <div class="row">
+        <div class="col s12" style="padding-top: 25px; width: 90%">
+            <div id="retail-form">
+                <div id="retail-form-content">
+                    <form id="retail">
+                        <img class="infoIcon" src="img/Retail.png" alt="" style="float: right; padding-left: 30px; max-width: 100%">
+                        <h3 align="right">{Literal}Retail Settings{/Literal}</h3> 
+                        
+                        <div class="row">
+                            <div class="col s12 m6" style="float: right;">
+                                <p >{Literal}These options will help you get started if any of your stations will be running in Retail mode{/Literal}. {Literal}If you are only running Food Service{/Literal}, {Literal}you can skip this page{/Literal}.</p>
+                            </div>
+                        </div>
+
+                        <div class="save lighten-4" style="width: 112%; padding-bottom: 50px;">
+                            <a class="waves-effect waves-light btn left green save-button">{Literal}PROCEED TO USER SETTINGS{/Literal}</a>
+                            <a class="waves-effect waves-light btn right ap-blue previous-button">{Literal}RETURN TO COMPANY INFO{/Literal}</a>
+                        </div>
+
+                        <div class="row" align="center" style="margin-right: 1px; padding-bottom: 75px;" >
+                            <div class="input-field col s12 s6 offset-m2"  align="center">
+                                <label>
+                                    <input type="checkbox" id="salesReps" <%= retail.hasSalesReps ? 'checked': '' %>>
+                                    <span style="color: black;">{Literal}Keep Track of Sales Reps{/Literal}</span>
+                                    <span class="helper-text">{Literal}With{/Literal} <b>{Literal}Sales Reps{/Literal}</b> {Literal}enabled{/Literal}, {Literal}you can mark your POS users as Sales Reps{/Literal} - {Literal}attributing sales to each individual{/Literal}</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row" style="margin-right: 1px;" >
+                            <div class="col s12 m2 offset-m2">
+                                <div class="input-field">
+                                    <label class="active" for="priceDecimal" style="color: black;">{Literal}Price Decimal Digits{/Literal}</label>
+                                    <select id="priceDecimal" required>
+                                        <option value="" disabled>{Literal}Choose{/Literal}...</option>
+                                        <option value="2" <%= (retail.priceDecimalNumber == '2' ? 'selected' : '') %>>{Literal}2{/Literal}</option>
+                                        <option value="3" <%= (retail.priceDecimalNumber == '3' ? 'selected' : '') %>>{Literal}3{/Literal}</option>
+                                        <option value="4" <%= (retail.priceDecimalNumber == '4' ? 'selected' : '') %>>{Literal}4{/Literal}</option>
+                                        <option value="5" <%= (retail.priceDecimalNumber == '5' ? 'selected' : '') %>>{Literal}5{/Literal}</option>
+                                    </select>
+                                    <span class="helper-text">{Literal}The number of decimal digits the Price of each item can have{/Literal}.</span>
+                                </div>
+                            </div>
+                
+                            <div class="col s12 m2 offset-m1">
+                                <div class="input-field">
+                                    <label class="active" for="qtyDecimal" style="color: black;">{Literal}Quantity Decimal Digits{/Literal}</label>
+                                    <select id="qtyDecimal" required>
+                                        <option value="" disabled>{Literal}Choose{/Literal}...</option>
+                                        <option value="1" <%= (retail.quantityDecimalNumber == '1' ? 'selected' : '') %>>{Literal}1{/Literal}</option>
+                                        <option value="2" <%= (retail.quantityDecimalNumber == '2' ? 'selected' : '') %>>{Literal}2{/Literal}</option>
+                                        <option value="3" <%= (retail.quantityDecimalNumber == '3' ? 'selected' : '') %>>{Literal}3{/Literal}</option>
+                                        <option value="4" <%= (retail.quantityDecimalNumber == '4' ? 'selected' : '') %>>{Literal}4{/Literal}</option>
+                                        <option value="5" <%= (retail.quantityDecimalNumber == '5' ? 'selected' : '') %>>{Literal}5{/Literal}</option>
+                                    </select>
+                                    <span class="helper-text">{Literal}The number of decimal digits the Quantity of each item can have{/Literal}.</span>
+                                </div>
+                            </div>
+
+                            <div class="col s12 m2 offset-m1">
+                                <div class="input-field">
+                                    <label class="active" for="totalDecimal" style="color: black;">{Literal}Total Decimal Digits{/Literal}</label>
+                                    <select id="totalDecimal" required>
+                                        <option value="" disabled>{Literal}Choose{/Literal}...</option>
+                                        <option value="2" <%= (retail.totalDecimalNumber == '2' ? 'selected' : '') %>>{Literal}2{/Literal}</option>
+                                        <option value="3" <%= (retail.totalDecimalNumber == '3' ? 'selected' : '') %>>{Literal}3{/Literal}</option>
+                                        <option value="4" <%= (retail.totalDecimalNumber == '4' ? 'selected' : '') %>>{Literal}4{/Literal}</option>
+                                        <option value="5" <%= (retail.totalDecimalNumber == '5' ? 'selected' : '') %>>{Literal}5{/Literal}</option>
+                                    </select>
+                                    <span class="helper-text">{Literal}The number of decimal digits the Total of each order can have{/Literal}.</span>
+                                </div>
+                            </div>
+                        </div>               
+                    </form>
+                </div>         
+            </div>
+        </div>
+    </div>
+</div>
+

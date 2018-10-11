@@ -1,0 +1,55 @@
+
+<div class="log-in-details-card" align="center" style="padding-top: 5%; padding-right: 15%;" <%= (App.rtl ? 'style="direction:rtl"' : '') %>>
+    <form id="log-in-detail-form-content">
+        <div class="row">
+            <div class="col s12 m10">
+                <h4><b>{Literal}Congrats on your purchase{/Literal}!</b></h4>
+                <h6><b>{Literal}Before we get started{/Literal}, {Literal}set a new password to use the next time you log in{/Literal}.</b></h6>
+            </div>
+        </div>
+        <div class="row" align="center">
+            <div class="input-field col s12 m4 offset-m3"  align="center">
+                <a class="waves-effect waves-light btn-small round ap-blue agreement-button">{Literal}Click Here{/Literal}</a>
+                {Literal}and read the Terms and Conditions{/Literal}
+            </div>
+        </div>
+        <div class="row" align="center" style="margin-right:8px; padding-bottom: 25px;" >
+            <div class="input-field col s12 m4 offset-m4"  align="center">
+                <label>
+                    <input type="checkbox" id="agreeCheckbox" disabled="disabled" />
+                    <span>{Literal}I agree to the Terms and Conditions{/Literal}</span>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div align="center">
+                <div class="input-field col s12 m4 offset-m3"  align="center">
+                    <input placeholder="{Literal}Serial Number{/Literal}" id="serialNumber" type="number" class="validate">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div align="center">
+                <div class="input-field col s12 m4 offset-m3"  align="center">
+                    <input placeholder="{Literal}Password{/Literal}" id="password" type="password" class="validate" autofocus="autofocus">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div align="center">
+                <div class="input-field col s12 m4 offset-m3"  align="center">
+                    <input placeholder="{Literal}Confirm Password{/Literal}" id="confirmPassword" type="password" class="validate">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div align="center">
+                <div class="input-field col s12 m4 offset-m3"  align="center">
+                    <a class="waves-effect waves-light btn-large round green save-button" id="submitButton" disabled="disabled">{Literal}Submit Password{/Literal}</a>
+                </div>        
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,1036 @@
+html {
+    overflow-y:   scroll !important;
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+}
+#top-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    z-index: 800;
+    -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.no-data-message {
+    padding-left: 25px;
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.signature {
+    max-width: 100% !important;
+}
+
+.no-data-message {
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.c3-tooltip td {
+    font-size:13px;
+    padding: 3px 6px;
+    background-color:#fff;
+    border-left:1px dotted #999;
+    color: #000;
+    }
+
+header, main, footer {
+    padding-left: 255px;
+    background-color: #e6eef8 !important;
+}
+.sidenav {
+    width: 250px !important;
+}
+
+  body {
+
+    background-color: #e6eef8 !important;
+  }
+@media only screen and (min-width : 1050px) {
+  .nav-wrapper {
+    padding-right: 260px;
+    }
+}
+
+  @media only screen and (max-width : 1050px) {
+    header, main, footer {
+      padding-left: 0px;
+    }    
+  }
+
+.nav-bar-action img {
+    /*padding-top: 5px;*/
+}
+
+.select-wrapper label.invalid {
+    margin-top: 62px;
+    margin-left: -11px;
+    color: #F44336;
+}
+.global-preloader {
+    position: fixed;
+    right: 0px;
+    top: 35px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.modal:not(.bottom-sheet):not(.delete-modal):not(.cancel-modal):not(.datepicker-modal):not(.timepicker-modal):not(.edit-modal) {
+    width: 75% !important; 
+    height: 80% !important ; 
+    max-height: 95% !important;
+}
+
+/*.timepicker-modal {
+    position: fixed;
+    overflow: visible;
+}*/
+
+.datepicker-done, .timepicker-done {
+    display: none;
+}
+
+.breadcrumb:before {
+    color: #aaa !important;
+}
+
+
+.card-panel-entity i {
+    font-size: 1rem !important;
+}
+
+
+.floating-menu {
+    display: none;
+    z-index: 99999;
+    background-color: rgba(0,0,0, 0.79);
+    position: fixed;
+    padding: 10px;
+    border: 0px solid #ddd;
+    border-radius: 3px;
+    margin: 20px;
+    max-width: 300px;
+}
+
+.floating-menu .edited-button-name {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.preset-selected {
+    font-weight: bold;
+}
+
+.quick-access {
+    margin-top: 8px;
+    padding-right: 5px !important;
+}  
+.card-panel-content {
+    padding-top: 40px;
+}
+
+.card-panel-title {
+    height: 30px; 
+    line-height: 10px; 
+    padding: 24px; 
+    font-size: 1.1rem;
+    background-color: gray;
+    margin: -24px !important;
+}
+
+#receipt-settings-form-content {
+    color:gray;
+}
+
+#receipt-settings-form-content .row {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.ap-card-title p {
+    font-size: 25px;
+    font-weight: 100;
+    padding-top: 18px;
+    padding-left: 18px;
+    font-weight: 300;
+}
+
+.save {
+    padding: 10px;
+}
+
+i.icon-blue {
+    size: 6rem;
+    color: #2c5487;
+}
+
+@media only screen and (max-width : 1050px) {
+    .ap-card-title-text {
+        display: none;
+    }
+}
+
+.c3 text, .c3-axis-y text, .c3-axis-x text, .c3 line, .c3 path {
+    color: #fff;
+    stroke: #fff;
+    font-weight: 100;
+}
+
+@media only screen and (min-width : 992px) {
+.buttons-secondary {
+    margin-bottom: 20px;
+}
+}
+
+
+#tills-form-content .textInputs{ 
+    padding-bottom: 50px;
+}
+
+#tills-form-content .switchOptions, #tills-form-content .textInputs{ 
+    padding-bottom: 50px;
+}
+
+/*h4 {
+    position: relative; 
+    bottom: 24px; 
+    right: 25px; 
+    left: -110px; 
+    width: 125%; 
+    font-size: 1.2rem; 
+    color: white; 
+    background-color: #3970b7; 
+    text-align: center; 
+    padding: 20px;
+}*/
+
+#delete-tills-modal { 
+    min-height: 10% !important ; 
+    max-height: 30% !important ; 
+    overflow-y: hidden !important ;
+}
+    
+@media only screen and (max-width : 1050px) {
+    #tills-form-content .textInputs .col{ 
+        padding-bottom: 50px;
+    }       
+}
+@media only screen and (max-width : 600px) {
+    #tills-form-content .switchOptions .col{ 
+        position: relative;
+        bottom: 75px;
+        padding-bottom: 50px;
+    }
+    
+    #tills-form-content .timePick .col{ 
+        position: relative;
+        bottom: 125px;
+    } 
+}
+
+.btn-card {
+    width:100%;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    text-transform: none;
+}
+
+.input-field label {
+    pointer-events: auto;
+  }
+
+.collapse-btn:hover {
+    -webkit-filter: brightness(90%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #999;
+}
+
+#breadcrumbs {
+    padding-left: 15px;
+}
+
+.ap-badge {
+    padding: 5px;
+    font-style: italic;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+i.icon-blue {
+    color: #2c5487;
+}
+.ap-card-title-text {
+    position: absolute;
+    margin-top: -55px;
+    right: 145px;
+    font-size: 16px;
+}
+
+#pos-users-wrapper .row, #tills-wrapper .row{
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+i.icon-blue {
+    color: #2c5487;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#company-info-form-content {
+    color:black;
+}
+
+#company-info-form-content .row {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+}
+
+.save {
+    padding: 10px;
+}
+
+.card-panel-entity .description {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+#pos-users-wrapper .type {
+    margin-top: 1px;
+}
+
+#pos-users-wrapper .card-panel,  #tills-wrapper .card-panel{
+    min-height: 210px !important;
+    max-height: 190px !important;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.tabs .indicator {
+    background-color: #3970b7;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: rgba(57, 112, 183, 0.2);
+    outline: none;
+}
+
+#pos-users-wrapper .edit, #tills-wrapper .edit{
+    -webkit-filter: none;
+    filter: none;
+    position: absolute;
+    transform: translateY(-40%);
+    width: 100%;
+    text-align: center;
+    margin: -24px !important;
+    height: 100%;
+    vertical-align: middle;
+    z-index: 999999 !important;
+}
+
+.c3-legend-item-event, .tick, .tick text, .c3-legend-item text, .c3-chart-arcs-title {
+    font-size: 0.7rem;
+    stroke: none;
+    
+    fill: #fff;
+}   
+
+.ap-validation-error-msg {
+    color: #f44336;
+    font-size: 12px;
+}
+
+.ap-field-row {
+    margin-bottom: 0 !important;
+    padding-top: 5px !important;
+}
+.ap-card {
+    border-radius: 3px !important;
+}
+
+.ap-card-content .col  {
+    padding-bottom: 0.5rem;
+} 
+
+.scroll-shadow {
+    display:none;
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    background: -moz-linear-gradient(top, rgba(125,185,232,0) 0%, rgba(0,0,0,0.52) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(125,185,232,0) 0%,rgba(0,0,0,0.52) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(125,185,232,0) 0%,rgba(0,0,0,0.52) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007db9e8', endColorstr='#85000000',GradientType=0 ); /* IE6-9 */
+    height: 30px;
+
+}
+
+.row-no-margin {
+    margin-bottom: 0px !important;
+}
+
+.ap-card-content .truncate {
+    display: inline;
+}
+
+.white-drop-down input {
+    color: #fff;
+    border-bottom: 1px solid #fff !important;
+}
+.white-drop-down .caret {
+    fill: #fff;
+}
+
+.white-drop-down {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.ap-card .switch label {
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.ap-card .ap-card-title, .ap-card .ap-card-content, .ap-card-footer {
+    padding: 8px;    
+}
+   
+.ap-card-title p {
+    font-size: 25px;
+    font-weight: 100;
+    padding-top: 18px;
+    padding-left: 18px;
+    font-weight: 300;
+}
+
+.floating-action-button-fixed {
+    position: fixed;
+    bottom:  10px;
+    right: 10px;
+    z-index: 997;
+}
+
+.btn-card:hover {
+    -webkit-filter: brightness(90%);
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #999;
+}
+.card-text {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}  
+
+i.medium {
+    font-size: 2.75rem;
+}
+
+.wrapper {
+    padding-left: 250px;
+}
+@media only screen and (max-width : 1050px) {
+    .wrapper {
+        padding-left: 0px;
+    }
+}
+
+#logo-view, #logo-view div {
+    max-height: 65px;
+    min-height: 65px;
+}
+
+#logo-img {
+    max-height: 45px;
+    margin: 10px 10px 10px 10px;
+}
+
+#israSideNavImg {
+    max-height: 45px;
+    margin: 10px 10px 10px 5px;
+}
+
+
+#round-collapse-btn {
+    position: absolute;
+    top: 12px;
+    left: 280px;
+    z-index: 999999999999;
+}
+
+@media only screen and (max-width : 992px) {
+    #round-collapse-btn {
+        display: none;
+    }
+}
+
+.main {
+    background-color: #e6eef8 !important;
+}
+
+.card .card-title {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+#global-preloader {
+    position: fixed;
+    z-index: 9999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#modal-preloader, #delete-modal-preloader {
+    position: fixed;
+    z-index: 99999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#delete-tills-modal { 
+    min-height: 10% !important ; 
+    max-height: 30% !important ; 
+    overflow-y: hidden !important ;
+}
+
+#delete-pos-user-modal { 
+    min-height: 10% !important ; 
+    max-height: 30% !important ; 
+    overflow-y: hidden !important ;
+}
+
+@media only screen and (max-width : 992px) {
+#delete-pos-user-modal { 
+        /*width: 95% !important ; */
+        min-height: 10% !important ; 
+        max-height: 55% !important ; 
+        overflow-y: hidden !important ;
+    }
+}
+
+.action-tile {
+    margin: 7px 0;
+    text-align: center;
+    line-height: 50px;
+    font-size: 28px;
+    background-color: grey;
+    color: white;
+    padding: 0;
+}
+
+#edit-user-modal { 
+    /*width: 75% !important ; */
+    min-height: 95% !important ; 
+    max-height: 95% !important ; 
+    overflow-y: hidden !important ;
+}
+@media only screen and (max-width : 992px) {
+    #edit-user-modal { 
+        /*width: 95% !important ; */
+        min-height: 95% !important ; 
+        max-height: 95% !important ; 
+        overflow-y: hidden !important ;
+    }
+}
+.logged-in {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #26a69a;
+    border-radius: 2px;
+    min-width: 60px !important;
+  }
+  .logged-out {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #808080 !important;
+    border-radius: 2px;
+    min-width: 60px !important;
+  }
+.logged-in:after {
+    content: "active" !important;
+}
+.logged-out:after {
+    content: "logged out" !important;
+}
+#delete-user-placeholder {
+    font-weight: 500;
+}
+
+i.icon-green {
+    color: #66bb6a ;
+}
+
+i.icon-grey {
+    color: #bdbdbd;
+}
+
+.tile {
+    background-color: #f1f1f1;
+}      
+
+.tile-red {
+    background-color: #ff8a80;
+}  
+
+.tile-purple {
+    background-color: #ea80fc;
+}  
+
+.tile-blue {
+    background-color: #82b1ff;
+}  
+
+.tile-green {
+    background-color: #b9f6ca;
+}  
+
+.tile-yellow {
+    background-color: #ffff8d;
+}  
+.tile-label {
+    background-color: none;
+}  
+
+.tile .tile-content, .tile-red .tile-content, .tile-purple .tile-content, .tile-blue .tile-content, .tile-green .tile-content, .tile-yellow .tile-content {
+    font-size: 11px;
+    font-weight: 800;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+}
+
+.tile-label .tile-content {
+    font-size: 10px;
+    font-weight: 800;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;    
+}  
+
+.input-field-small {
+    max-width: 30px !important;
+}
+
+.input-field-checkbox {
+    padding-left: 75px !important;
+    bottom: 50px;
+}
+
+.form-footer {
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-right: 15px;
+    padding-bottom: 8px;
+}
+
+@media only screen and (max-width : 1040px) {
+    #delete-pos-user-modal { 
+        /*width: 95% !important ; */
+        min-height: 10% !important ; 
+        max-height: 55% !important ; 
+        overflow-y: hidden !important ;
+    }
+}
+
+@media only screen and (max-width : 731px) {
+    #delete-inventory-modal, #delete-pos-user-modal { 
+        /*width: 95% !important ; */
+        min-height: 10% !important ; 
+        max-height: 55% !important ; 
+        overflow-y: hidden !important ;
+    }
+}
+
+@media only screen and (max-width : 1050px) {
+    .ap-card-title-text {
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width : 992px) {
+    .israCardLogInLogo {
+        position: absolute;
+        left: -15% !important;
+    }
+    
+    .apLogInLogo {
+        position: relative;
+        left: 43%;
+        padding-bottom: 25px;
+    }
+}
+.israCardLogInLogo {
+	position: absolute;
+    left: 41%;
+}
+
+.apLogInLogo {
+	position: relative;
+	left: 43%;
+	padding-bottom: 25px;
+}
+
+#israSideNavImg {
+    position: absolute;
+    max-height: 45px;
+    right: -5px;
+    top: 12%
+}
+
+
+@media only screen and (max-width : 1000px) {
+    .israCardLogInLogo {
+        position: relative;
+    }
+}
+
+#forgot-password-modal { 
+    top: 50px;
+    min-height: 10% !important ; 
+    max-height: 30% !important ; 
+    overflow-y: hidden !important ;
+}
+
+#forgot-password-modal h4{ 
+    position: relative !important; 
+    bottom: 24px !important;
+    right: -100px !important; 
+    left: -400px !important; 
+    width: 110% !important; 
+    font-size: 1.2rem !important; 
+    color: white; 
+    background-color: #3970b7 !important;
+    text-align: center !important; 
+    padding: 20px !important;
+}
+
+#enter-password-modal { 
+    top: 50px;
+    min-height: 10% !important ; 
+    max-height: 30% !important ; 
+    overflow-y: hidden !important ;
+}
+
+#enter-password-modal h4{ 
+    position: relative !important; 
+    bottom: 24px !important;
+    right: -100px !important; 
+    left: -400px !important; 
+    width: 110% !important; 
+    font-size: 1.2rem !important; 
+    color: white; 
+    background-color: #3970b7 !important;
+    text-align: center !important; 
+    padding: 20px !important;
+}
+
+#log-in-form-content {
+    position: absolute;
+    left: 40%;
+}
+
+@media only screen and (min-width : 1450px) {
+    .navBarPath {
+      right: 25%;
+    }
+}
+
+@media only screen and (max-width : 1400px) {
+    #navBarIsraCardLogo {
+        display: none;
+    }
+}
+
+#previous-page-modal { 
+    z-index: 1000;
+    top: 20%;
+    min-height: 10% !important ; 
+    max-height: 30% !important ; 
+    overflow-y: hidden !important ;
+}
+
+#enter-password-modal {
+    z-index: 1000000;
+}
+
+#manager-modal, #admin-modal, #server-modal, #cashier-modal { 
+    z-index: 1000;
+    top: 20%;
+    min-height: 70% !important ; 
+    max-height: 70% !important ; 
+    overflow-y: hidden !important ;;
+}
+
+
+#pos-user-form-modal {
+    /*width: 95% !important ; */
+    min-height: 50% !important ; 
+    max-height: 50% !important ; 
+    overflow-y: hidden !important ;
+    top: 20% !important;
+}
+
+#manager-modal h4, #admin-modal h4, #server-modal h4, #cashier-modal h4, #support-modal h4{ 
+    position: relative !important; 
+    bottom: 24px !important;
+    right: -100px !important; 
+    left: -400px !important; 
+    width: 110% !important; 
+    font-size: 1.2rem !important; 
+    color: white; 
+    background-color: #3970b7 !important;
+    text-align: center !important; 
+    padding: 20px !important;
+}
+
+#support-modal h4{ 
+    position: relative !important; 
+    bottom: 24px !important;
+    right: -45px !important; 
+    left: -400px !important; 
+    width: 110% !important; 
+    font-size: 1.2rem !important; 
+    color: white; 
+    background-color: #3970b7 !important;
+    text-align: center !important; 
+    padding: 20px !important;
+}
+
+#manager-modal .card-panel, #admin-modal .card-panel, #server-modal .card-panel, #cashier-modal .card-panel, #product-lines-wrapper-wrapper .card-panel, #items-wrapper .card-panel {
+    min-height: 25px !important;
+    max-height: 170px !important;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+#manager-modal .edit, #admin-modal .edit, #server-modal .edit, #cashier-modal .edit, #product-lines-wrapper .edit, #items-wrapper .edit{
+    -webkit-filter: none;
+    filter: none;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    margin: -24px !important;
+    height: 100%;
+    vertical-align: middle;
+    z-index: 999999 !important;
+}
+
+#manager-modal .row, #admin-modal .row, #server-modal .row, #cashier-modal .row, #product-lines-wrapper .row, #items-wrapper .row {
+    margin-bottom: 4px;
+    margin-top: 8px;
+}
+
+#manager-modal .active, #admin-modal .active, #server-modal .active, #cashier-modal .active, #product-lines-wrapper .active, #items-wrapper .active{
+    z-index: 100 !important;  
+}
+
+.navBarNumber {
+    color: gray;
+    display: inline; 
+    font-size: 3vw;
+    padding-left: 10px;
+}
+
+.navBarLine {
+    color: gray; 
+    display: inline; 
+    position: relative; 
+    bottom: 30px;
+    padding-left: 25px;
+}
+
+.navBarText {
+    color: gray;
+    margin-top: -40px;
+}
+
+@media only screen and (max-height: 820px) {    
+    .row .col.m4 { 
+        width: 33.3333333333% !important; 
+    }
+
+    #manager-modal h4, #admin-modal h4, #server-modal h4, #cashier-modal h4{ 
+        right: -90px !important; 
+        width: 120% !important; 
+    }
+
+    #slide-out {
+        top: 13.2% !important;
+    }
+
+    #recieptPreview {
+        width: 40% !important;
+    }
+
+    #top-navigation {
+        width: 105% !important
+    }
+    #customMessage, #savingsMessage, #dateTimeSelect {
+        width: 200px !important;
+    }
+    #navBarPassword {
+        left: 15px !important;
+    }
+    #navBarInfo {
+        left: 15px !important;
+    }
+    #navBarRetail {
+        left: 5px !important;
+    }
+    #navBarUsers {
+        left: 0px !important;
+    }
+    #navBarReceipts {
+        left: 15px !important;
+    }
+    #navBarProducts {
+        left:10px !important;
+    }
+    #navBarCompleted {
+        left: 15px !important; 
+    }
+}
+
+#delete-pos-user-modal, #delete-items-modal, #delete-product-line-modal { 
+    width: 100% !important;
+    top: 0px !important;
+    min-height: 10% !important ; 
+    max-height: 55% !important ; 
+    overflow-y: hidden !important ;
+}
+
+@media only screen and (max-width : 1256px) {
+    #israSideNavImg {
+      display: none !important;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .row .col.offset-m2 { 
+        margin-right: auto !important;
+    }
+}
+
+#support-modal, #instruction-modal { 
+    /*width: 75% !important ; */
+    max-height: 70% !important ; 
+    overflow-y: hidden !important ;
+    z-index: 10000000 !important;
+}
+@media only screen and (max-width : 992px) {
+    #support-modal, #instruction-modal { 
+        /*width: 95% !important ; */
+        min-height: 95% !important ; 
+        max-height: 95% !important ; 
+        overflow-y: hidden !important ;
+    }
+}
+
+@media only screen and (max-height: 768px) {    
+    #top-navigation {
+        width: 100% !important
+    }
+    #printCompanyDetailsText {
+        padding-left: 13% !important;
+    }
+    #manager-modal h4, #admin-modal h4, #server-modal h4, #cashier-modal h4{ 
+        right: -80px !important; 
+    }
+    .navBarLine {
+        bottom: 15px !important;
+    }
+    #inputColumn {
+        padding-left: 0px !important;
+    }
+}
+
+@media only screen and (min-height: 1080px) {    
+    #slide-out {
+        top: 9.4% !important
+    }
+}
+
+#pos-user-form-modal h4 {
+    position: relative; 
+    bottom: 24px; 
+    right: 15px; 
+    left: -110px; 
+    width: 125%; 
+    font-size: 1.2rem; 
+    color: white; 
+    background-color: #3970b7; 
+    text-align: center; 
+    padding: 20px;
+}
+
+@media only screen and (min-width: 1024px) {    
+    #pos-user-form-modal h4 {
+        right: -40px !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {    
+    #pos-user-form-modal h4 {
+        right: -28px !important;
+    }
+}
+
+@media only screen and (min-width: 1440px) {    
+    #pos-user-form-modal h4 {
+        right: -70px !important;
+    }
+}

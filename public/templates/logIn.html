@@ -1,0 +1,32 @@
+
+<div class="row" align="center" style="max-width: 100%;">
+    <img class="israCardLogInLogo" src="img/israCardLogInLogo.png" alt="">
+
+</div>
+<div class="log-in-card" align="center" style="padding-top: 6%;" <%= (App.rtl ? 'style="direction:rtl"' : '') %>>
+    <form id="log-in-form-content">
+        <div class="row">
+            <div align="center">
+                <a href="#/log-in-details">{Literal}New Users Click Here{/Literal}</a>
+            </div>
+        </div>
+        <div class="row">
+            <div align="center">
+                
+                <div class="input-field col s12 m12">
+                    <input placeholder="{Literal}Serial Number{/Literal}" id="serialNumber" type="number" class="validate" autofocus="autofocus">
+                </div>
+                <div class="input-field col s12 m12">
+                    <input placeholder="{Literal}Password{/Literal}" id="password" type="password" class="validate" autofocus="autofocus">
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="logInButtons">
+            <div align="center" style="padding-left: 125px; padding-right: 125px;">
+                <a class="waves-effect waves-light btn-large round green save-button">{Literal}LOG IN{/Literal}</a>
+            </div>
+        </div>
+    </form>
+</div>
+

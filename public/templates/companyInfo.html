@@ -1,0 +1,88 @@
+<div id="company-info-wrapper" <%= (App.rtl ? 'style="direction:rtl"' : '') %>>
+    <div class="row">
+        <div class="col s12" style="padding-top: 25px;">
+            <div class="" id="company-info-form" style="display: none; ">
+                <div id="company-info-form-content">
+                    <form id="company_info" style="display: none;">
+                        <img class="infoIcon" src="img/Info.png" alt="" style="float: right; padding-left: 30px; max-width: 100%">
+                        <h3 align="right">{Literal}Company Information{/Literal}</h3> 
+                        
+                        <div class="row">
+                            <div class="col s12 m5" style="float: right;">
+                                <p>{Literal}Here we will get started with some basic information about your company{/Literal}. {Literal}Some of it may already be filled out for you{/Literal}, {Literal}please confirm that everything below is correct{/Literal}.</p>
+                            </div>
+                        </div>
+                        <div class="save lighten-4" align="right" style="padding-bottom: 50px;">
+                            <a class="waves-effect waves-light left btn green save-button">{Literal}PROCEED TO RETAIL SETTINGS{/Literal}</a>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="col s12 m4">
+                                    <div class="input-field" style="display: none;" maxlength="11">
+                                        <input id="id" type="text" class="validate" value="<%= companyInfo.id %>">
+                                    </div>
+
+                                    <div class="input-field">
+                                        <input id="companyName" type="text" class="validate" value="<%= companyInfo.companyName %>" maxlength="50">
+                                        <label for="companyName" class="active">{Literal}Company Name{/Literal}</label>
+                                        <span class="helper-text" data-error="{Literal}This field is mandatory and cannot contain special characters{/Literal}" data-success=""></span>
+                                    </div>
+                                </div>
+                
+                                <div class="col s12 m4">
+                                    <div class="input-field">
+                                        <label class="active" for="business-type-dropdown">{Literal}Business Type{/Literal}</label>
+                                        <select id="business-type-dropdown" required>
+                                            <option value="" disabled>{Literal}Choose{/Literal}...</option>
+                                            <option value="Food Service" <%= (companyInfo.salesType == 'Food Service' ? 'selected' : '') %>>{Literal}Food Service{/Literal}</option>
+                                            <option value="Retail" <%= (companyInfo.salesType == 'Retail' ? 'selected' : '') %>>{Literal}Retail{/Literal}</option>
+                                            <option value="Combination"<%= (companyInfo.salesType == 'Combination' ? 'selected' : '') %>>{Literal}Combination{/Literal}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col s12 m4">
+                                    <div class="input-field">
+                                        <input id="address1" type="text" class="validate" value="<%= companyInfo.address1 %>" maxlength="50">
+                                        <label for="address1" class="active">{Literal}Address{/Literal}</label>
+                                        <span class="helper-text" data-error="{Literal}Contains special characters{/Literal}" data-success=""></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="row">
+                            <div class="col s12">
+                                <div class="col s12 m4">
+                                    <div class="input-field" style="padding-bottom: 5%;">
+                                        <input id="state" type="text" class="validate" value="<%= companyInfo.state %>" maxlength="2">
+                                        <label for="state" class="active">{Literal}State{/Literal}/{Literal}Province{/Literal}</label>
+                                        <span class="helper-text" data-error="{Literal}Contains special characters{/Literal}" data-success=""></span>
+                                    </div>
+                                </div>
+
+                                <div class="col s12 m4">
+                                    <div class="input-field">
+                                        <input id="city" type="text" class="validate" value="<%= companyInfo.city %>" maxlength="20">
+                                        <label for="city" class="active">{Literal}City{/Literal}</label>
+                                        <span class="helper-text" data-error="{Literal}Contains special characters{/Literal}" data-success=""></span>
+                                    </div>
+                                </div>
+                                <div class="col s12 m4">
+                                    <div class="input-field">
+                                        <input id="zip" type="number" class="validate" value="<%= companyInfo.zip %>">
+                                        <label for="zip" class="active">{Literal}Zip{/Literal}</label>
+                                        <span class="helper-text" data-error="{Literal}Contains special characters{/Literal}" data-success=""></span>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div> 
+                    </form>
+                </div>         
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div class="navigation-keys">
+    <a class="dot button waves-effect waves-light company-info-button"></a>
+</div>

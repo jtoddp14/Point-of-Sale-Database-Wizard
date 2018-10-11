@@ -1,0 +1,77 @@
+<div id="completed-wrapper" <%= (App.rtl ? 'style="direction:rtl"' : '') %>>
+    <div class="row">
+        <div class="col s12" style="padding-top: 25px; width: 90%">
+            <div id="completed-form">
+                <div id="completed-form-content">
+                    <form id="completed">
+                        <img class="infoIcon" src="img/Complete.png" alt="" style="float: right; padding-left: 30px; max-width: 100%">
+                        <h3 align="right">{Literal}Completed{/Literal}!</h3> 
+                        
+                        <div class="row">
+                            <div class="col s12 m6" style="float: right;">
+                                <p>{Literal}Congratulations on completing the Setup Wizard{/Literal}!{Literal}Here you will see an overview of your settings{/Literal}.{Literal}Should you need to edit something{/Literal},{Literal}click on the icon to take you back to that page{/Literal}.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="save lighten-4" style="width: 110%; padding-bottom: 50px;">
+                                <a class="waves-effect waves-light btn right ap-blue previous-button">{Literal}RETURN TO ITEM SETUP{/Literal}</a>
+                            </div>    
+                        </div>
+                        
+                        <div class="row" style="padding-right: 120px">
+                            <div class="col s12 m4">
+                                <a href="#/company-info"><img class="infoIcon" src="img/Info.png" alt="" style="width: 23%; padding-top: 5%;"></a>
+                                <span><h6 style="display: inline; position: relative; padding-top: 25px; bottom: 60px; padding-right: 3%;"><strong>{Literal}Company Info{/Literal}</strong></h6></span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Name{/Literal}: <%= completed.companyName%> </span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Address{/Literal}: <%= completed.address1%> </span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;"><%= completed.city%>, <%= completed.state%> <%= completed.zip%></span>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <a href="#/retail"><img class="infoIcon" src="img/Retail.png" alt="" style="width: 23%; padding-top: 5%;"></a>
+                                <span><h6 style="display: inline; position: relative; padding-top: 25px; bottom: 60px; padding-right: 3%;"><strong>{Literal}Retail Settings{/Literal}</strong></h6></span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Price Decimal Digits{/Literal}: <%= completed.priceDecimalNumber%> </span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Quantity Decimal Digits{/Literal}: <%= completed.quantityDecimalNumber%> </span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Total Decimal Digits{/Literal}: <%= completed.totalDecimalNumber%> </span>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <a href="#/pos-users"><img class="infoIcon" src="img/Users.png" alt="" style="width: 23%; padding-top: 5%;"></a>
+                                <span><h6 style="display: inline; position: relative; padding-top: 25px; bottom: 60px; padding-right: 3%;"><strong>{Literal}Users{/Literal}</strong></h6></span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Total Users{/Literal}: <%= completed.total%></span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Admin{/Literal}: <%= completed.admin%> </span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Manager{/Literal}: <%= completed.manager%> </span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Server{/Literal}: <%= completed.server%> </span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Cashier{/Literal}: <%= completed.cashier%> </span>
+                            </div>
+                        </div>
+
+                        <div class="row" style="padding-right: 120px">
+                            <div class="col s12 m4">
+                                <a href="#/receipt-settings"><img class="infoIcon" src="img/Receipts.png" alt="" style="width: 23%; padding-top: 5%;"></a>
+                                <span><h6 style="display: inline; position: relative; padding-top: 25px; bottom: 60px; padding-right: 3%;"><strong>{Literal}Receipts{/Literal}</strong></h6></span>
+                                <% if(completed.printLogo) {%>
+                                    <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Print{/Literal}: {Literal}Logo{/Literal}</span>
+                                <%}%>
+                                <% if(completed.printCustomerDetails) {%>
+                                    <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Print{/Literal}: {Literal}Company Details{/Literal}</span>
+                                <%}%>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Custom Message{/Literal}: <%= completed.receiptMessage%></span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Savings Message{/Literal}: <%= completed.savingsMessage%></span>
+                            </div>
+
+                            <div class="col s12 m4">
+                                <a href="#/product-lines"><img class="infoIcon" src="img/Items.png" alt="" style="width: 23%; padding-top: 5%;"></a>
+                                <span><h6 style="display: inline; position: relative; padding-top: 25px; bottom: 60px; padding-right: 3%;"><strong>{Literal}Products{/Literal}</strong></h6></span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Total Product Lines{/Literal}: <%= completed.productLines%></span>
+                                <span style="display: block; POSITION: relative; padding-right: 33%; bottom: 50px;">{Literal}Total Items{/Literal}: <%= completed.items%></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>         
+            </div>
+        </div>
+    </div>
+</div>
+    
+    

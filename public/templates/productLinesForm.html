@@ -1,0 +1,152 @@
+<div class="modal-content" <%= (App.rtl ? 'style="direction:rtl"' : '') %>>
+    <form <%= (App.rtl ? 'style="direction:rtl"' : '') %> >
+        <div class="row">
+            <div class="input-field col s12 m4">
+                <input id="description" placeholder="Enter product line description" type="text" class="validate" value="<%= productLine.description %>">
+                <label class="active" for="description">{Literal}Product Line Description{/Literal}</label>
+                <span class="helper-text" data-error="This field can't be empty or contain special characters" data-success=""></span>
+            </div>
+            <div class="input-field col s12 m4">
+                <select id="item-type">
+                        <option value="" selected>{Literal}Create New Item Type{/Literal}</option>
+                    <% _.each(itemTypes, function(itemType) { %>
+                        <option value="<%= itemType %>" <%= productLine.itemType == itemType ? 'selected' : '' %>><%= itemType %></option>
+                    <% }); %>
+                </select>
+                <label>{Literal}Select Item Type{/Literal}</label>
+            </div>
+            <div class="input-field col s12 m4">
+                <select id="menu-page">
+                        <option value="" selected>{Literal}Create New Menu Page{/Literal}</option>
+                    <% _.each(menuPages, function(menuPage) { %>
+                        <option value="<%= menuPage %>" <%= productLine.menuPageName == menuPage ? 'selected' : '' %>><%= menuPage %></option>
+                    <% }); %>
+                </select>
+                <label>{Literal}Select Menu Page{/Literal}</label>
+            </div>
+        </div>
+        <div class="row checkboxes">
+            <div class="col s12 m3 offset-m2">
+                <p>
+                    <label>
+                        <input type="checkbox" id="isStock" class="filled-in" data-type="productLine.isStock"<%= productLine.isStock ? 'checked': '' %>>
+                        <span>{Literal}Trade Stock{/Literal}</span>
+                    </label>
+                </p>
+            </div>
+
+            <div class="col s12 m3">
+                <p>
+                    <label>
+                        <input type="checkbox" id="scale" class="filled-in" data-type="productLine.isScalable"<%= productLine.isScalable ? 'checked': '' %>>
+                        <span>{Literal}Items are Scalable{/Literal}</span>
+                    </label>
+                </p>
+            </div>
+
+            <div class="col s12 m3">
+                <p>
+                    <label>
+                        <input type="checkbox" id="serialized" class="filled-in" data-type="productLine.isSerialized"<%= productLine.isSerialized ? 'checked': '' %>>
+                        <span>{Literal}Items have Serial No{/Literal}.</span>
+                    </label>
+                </p>
+            </div>
+
+            <div class="col s12 m3 offset-m2">
+                <p>
+                    <label>
+                        <input type="checkbox" id="noPartialQuantity" class="filled-in" data-type="productLine.noPartialQuantity"<%= productLine.noPartialQuantity ? 'checked': '' %>>
+                        <span>{Literal}Allow Partial Quantities{/Literal}</span>
+                    </label>
+                </p>
+            </div>
+
+            <div class="col s12 m3">
+                <p>
+                    <label>
+                        <input type="checkbox" id="taxable" class="filled-in" data-type="productLine.isTaxable"<%= productLine.isTaxable ? 'checked': '' %>>
+                        <span>{Literal}Items are Taxable{/Literal}</span>
+                    </label>
+                </p>
+            </div>
+
+            <div class="col s12 m3">
+                <p>
+                    <label>
+                        <input type="checkbox" id="choices" class="filled-in" data-type="productLine.HasChoices"<%= productLine.HasChoices ? 'checked': '' %>>
+                        <span>{Literal}Items have Choices{/Literal}</span>
+                    </label>
+                </p>
+            </div>
+            <div class="col s12 m3 offset-m2">
+                <p>
+                    <label>
+                        <input type="checkbox" id="allow-discounts" class="filled-in" data-type="productLine.allowDiscount"<%= productLine.allowDiscount ? 'checked': '' %>>
+                        <span>{Literal}Allow Discounts{/Literal}</span>
+                    </label>
+                </p>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div id="item-type-form-modal" class="modal modal-fixed-footer item-type-form-modal" style="min-height: 50%; max-height: 30% !important; min-width: 50%; z-index: 100000;">
+    <div class="modal-content">
+        <h4>{Literal}Create New Item Type{/Literal}</h4> 
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="input-field">
+                    <input id="itemTypeName" type="text">
+                    <label class="active" for="itemTypeName">{Literal}New Item Type Name{/Literal}: </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:void(0)" class="modal-close waves-effect waves-light red btn-flat cancel-item-type-button">{Literal}Cancel{/Literal}</a>
+        <a href="javascript:void(0)" class="waves-effect waves-light green btn-flat right save-item-type-button">{Literal}Save{/Literal}</a>
+    </div>
+</div>
+
+<div id="menu-page-form-modal" class="modal modal-fixed-footer menu-page-form-modal" style="min-height: 50%; max-height: 30% !important; min-width: 50%; z-index: 100000;">
+    <div class="modal-content">
+        <h4>{Literal}Create New Menu Page{/Literal}</h4> 
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <div class="input-field">
+                    <input id="menuPageName" type="text">
+                    <label class="active" for="menuPageName">{Literal}New Menu Page Name{/Literal}: </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:void(0)" class="modal-close waves-effect waves-light red btn-flat cancel-menu-page-button">{Literal}Cancel{/Literal}</a>
+        <a href="javascript:void(0)" class="waves-effect waves-light green btn-flat right save-menu-page-button">{Literal}Save{/Literal}</a>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <a href="#delete-product-line-modal" class="waves-effect waves-light btn red left modal-trigger delete-button">{Literal}Delete{/Literal}</a>
+    <a href="javascript:void(0)" class="waves-effect waves-green btn green right save-button">{Literal}Save{/Literal}</a>
+    <a href="javascript:void(0)" class="modal-close waves-effect waves-light right btn-flat">{Literal}Cancel{/Literal}</a>
+</div>
+
+
+<div id="delete-product-line-modal" class="modal">
+    <div class="modal-content">
+        <h4>{Literal}Confirm Deletion{/Literal}</h4>
+        <% if(App.rtl){ %>
+            <p>האם אתה בטוח שברצונך להסיר את קו המוצרים הזה?</p>
+        <%}%>
+        <%if(App.rtl != true){%>
+            <p>Are you sure that you would like to remove this product line?</p>
+        <%}%>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:void(0)" class="modal-close waves-effect waves-light btn-flat">{Literal}Cancel{/Literal}</a>
+        <a href="javascript:void(0)" id="delete-product-line-confirm" class="modal-close waves-effect waves-green btn red" data-product-line-id="<%= productLine.id %>">{Literal}Delete{/Literal}</a>
+        <input type="hidden" id="delete-product-line-id" />
+    </div>
+</div>

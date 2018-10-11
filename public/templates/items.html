@@ -1,0 +1,80 @@
+<div id="items-wrapper" <%= (App.rtl ? 'style="direction:rtl"' : '') %> >
+    <img class="infoIcon" src="img/Items.png" alt="" style="float: right; padding-left: 30px; max-width: 100%; padding-top: 25px;">
+    <h3 align="right" style="padding-top: 25px;">{Literal}Users{/Literal}</h3> 
+    
+    <div class="row">
+        <div class="col s12 m6" style="float: right;">
+            <p>{Literal}Here you can begin adding items to the Product Lines you just created{/Literal}. {Literal}All of the fields for each item are required{/Literal}.</p>
+        </div>
+    </div>
+
+    <div class="save lighten-4" align="right" style="padding-bottom: 50px;">
+        <a class="waves-effect waves-light btn ap-blue previous-button" >{Literal}RETURN TO PRODUCT LINES{/Literal}</a>
+        <a class="waves-effect waves-light btn green proceed-button" style="float: left;">{Literal}PROCEED TO COMPLETED{/Literal}</a>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m2">
+            <div class="input-field">
+                <input id="searchText" type="text" maxlength="50">
+                <label for="searchText">{Literal}Search Text{/Literal}</label>
+            </div>
+        </div> 
+        <div class="input-field col s10 m3">
+            <select id="searchField">
+                <option value="0"> {Literal}Item Code{/Literal} </option>
+                <option value="1"> {Literal}Description{/Literal} </option>
+                <option value="2"> {Literal}Product Line{/Literal} </option>
+                <option value="3"> {Literal}Price{/Literal} </option>
+            </select>
+        </div>
+        <div class="col s2 m2">
+            <div class="search" style="padding-top: 20px;" >
+                <a href="javascript:void(0)" class="btn waves-effect waves-light green search-items-button">
+                    <i class="material-icons">search</i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <% _.each(items, function(items) { %>
+            <div id ="itemCards">
+                <div class="col s12 m3 xl2" style="padding-left: 200px;">
+                    <div class="card-panel card-panel-entity z-depth-2 sequence-card hoverable white-text waves-effect waves-light <%= items.cardStyleClass %>" style="background-color: #3970b7; max-width: 200px; min-width: 200px" data-id="<%= items.id %>" data-selected='0'>
+                        <div>
+                            <div class="row description truncate" >
+                                &nbsp;&nbsp;<%= items.description %>
+                            </div>
+                            <div class="row itemDescription truncate">
+                                {Literal}ID:{/Literal}
+                                <%= items.itemCode %>
+                            </div>
+                            <div class="row type truncate">
+                                &nbsp
+                            </div>
+                            <div class="row price truncate">
+                                {Literal}Price:{/Literal} $
+                                <%= items.price %>
+                            </div>
+                        </div>
+                        <div class="edit" style="display: none">
+                            <a href="javascript:void(0)" class="btn-floating btn-large waves-effect waves-light ap-dark-blue edit-items-trigger"
+                                data-id="<%= items.id %>">
+                                <i class="material-icons">edit</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+            
+<div id="items-form-modal" class="modal modal-fixed-footer items-form-modal" style="max-height: 100%">
+    
+</div>
+
+<a href="javascript:void(0)" id="add-items-button" class="btn-floating btn-large waves-effect waves-light green floating-action-button-fixed">
+    <i class="material-icons">add</i>
+</a>
