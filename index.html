@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IsraPOS Install Wizard</title>
+    <link rel="icon" type="images/png" href="img/favicon.ico">
+
+
+    <link type="text/css" href="css/fonts.css" rel="stylesheet" media="screen,projection">
+    <link rel="stylesheet" href="lib/materialize-css/dist/css/materialize.css">
+    <link rel="stylesheet" href="lib/materialize-css-rtl/materialize.rtl.css" id="rtl-supprt-css" disabled="disabled">
+    <link href="lib/c3/c3.min.css" rel="stylesheet">
+    <link type="text/css" href="css/ap-colors.css" rel="stylesheet" media="screen,projection">
+    <link type="text/css" href="css/main.css" rel="stylesheet" media="screen,projection">
+
+    <link rel="stylesheet" href="lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+
+    <link rel="stylesheet" href="lib/gridstack/dist/gridstack.min.css">
+    <script src="lib/c3/c3.min.js"></script>
+    <script src="lib/d3/dist/d3.min.js" charset="utf-8"></script>
+    
+    <script src="lib/moment/moment.js"></script>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="lib/materialize-css/dist/js/materialize.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
+    <script src="lib/backbone/backbone-min.js"></script>
+    <script src="lib/crypto-js/crypto-js.js"></script>
+    <script src="lib/jquery-ui-dist/jquery-ui.min.js"></script>
+    <script src="lib/lodash/lodash.min.js"></script>
+    <script src="lib/gridstack/dist/gridstack.min.js"></script>
+    <script src="lib/gridstack/dist/gridstack.all.js"></script>
+
+    <script src="lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+
+    <script src="js/helpers.js"></script>
+    <!-- BackboneJS models -->
+    <script src="js/models/logIn.js"></script>
+    <script src="js/models/loginDetails.js"></script>
+    <script src="js/models/companyInfo.js"></script>
+    <script src="js/models/retail.js"></script>
+    <script src="js/models/posUser.js"></script>
+    <script src="js/models/receiptSettings.js"></script>
+    <script src="js/models/productLines.js"></script>
+    <script src="js/models/completed.js"></script>
+    <script src="js/models/items.js"></script>
+    <!-- BackboneJS collections -->
+    <script src="js/collections/posUserCollection.js"></script>
+    <script src="js/collections/productLinesCollection.js"></script>
+    <script src="js/collections/itemsCollection.js"></script>
+    <!-- BackboneJS views -->
+    <script src="js/views/logIn.js"></script>
+    <script src="js/views/loginDetails.js"></script>
+    <script src="js/views/home.js"></script>
+    <script src="js/views/companyInfo.js"></script>
+    <script src="js/views/retail.js"></script>
+    <script src="js/views/posUsers.js"></script>
+    <script src="js/views/posUserForm.js"></script>
+    <script src="js/views/receiptSettings.js"></script>
+    <script src="js/views/productLines.js"></script>
+    <script src="js/views/productLinesForm.js"></script>
+    <script src="js/views/completed.js"></script>
+    <script src="js/views/items.js"></script>
+    <script src="js/views/itemsForm.js"></script>
+    <!-- BackboneJS app -->
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div id="global-wrapper">
+        <div id="top-shadow"></div>
+        <div class="wrapper">
+            <div>
+                <!-- Dropdown Structure -->
+                <ul id="dropdown1" class="dropdown-content">
+                    <li>
+                        <a href="#/">Support</a>
+                    </li>
+                    <li>
+                        <a href="#/">Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#/">Logout</a>
+                    </li>
+                </ul>
+                <div class="navbar-fixed">
+                    <nav class="white" role="navigation" style="height: 100px; left: 0%; text-align: center;">
+                        <div class="nav-wrapper">
+                            <ul id="navbar-ul" >
+                                <li>
+                                    <a href="#" data-target="slide-out" class="sidenav-trigger button-collapse blue-text darken-1">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="col s12" id="breadcrumbs" >
+                                
+                            </div>
+                            <img src="img/israCardLogInLogo.png" class="responsive-img" id="israSideNavImg" style="display: none; width: 14%; height: auto;">
+                            <div style="width: 125%; margin-top:5px" id="top-navigation">
+                                <img src="img/password-gray.png" id="password-gray" class="responsive-img" style="width: 3%;">
+                                <img src="img/password-blue.png" id="password-blue" class="responsive-img" style="width: 3%; display: none;">
+                                <img src="img/password-green.png" id="password-green" class="responsive-img" style="width: 3%; display: none;">
+                                    <p id="navBarPassword" style="color: gray; width: 1%; position: relative; display: -webkit-inline-box; top: 20px; left: 45px;">{Literal}Password{/Literal}</p>
+                                    <h5 class="navBarLine">____</h5>
+                                <a href="#/company-info"><img src="img/info-gray.png" id="info-gray" class="responsive-img" style="width: 3%;"></a>
+                                <a href="#/company-info"><img src="img/info-blue.png" id="info-blue" class="responsive-img" style="width: 3%; display: none;"></a>
+                                <a href="#/company-info"><img src="img/info-green.png" id="info-green" class="responsive-img" style="width: 3%; display: none;"></a>
+                                    <p id="navBarInfo" style="color: gray; width: 1%; position: relative; display: -webkit-inline-box; top: 20px; left: 50px;">{Literal}Info{/Literal}</p>
+                                    <h5 class="navBarLine">____</h5>
+                                <a href="#/retail"><img src="img/retail-gray.png" id="retail-gray" class="responsive-img" style="width: 3%;"></a>
+                                <a href="#/retail"><img src="img/retail-blue.png" id="retail-blue" class="responsive-img" style="width: 3%; display: none;"></a>
+                                <a href="#/retail"><img src="img/retail-green.png" id="retail-green" class="responsive-img" style="width: 3%; display: none;"></a>
+                                    <p id="navBarRetail" style="color: gray; width: 1%; position: relative; display: -webkit-inline-box; top: 20px; left: 30px;">{Literal}Retail{/Literal}</p>
+                                    <h5 class="navBarLine">____</h5>
+                                <a href="#/pos-users"><img src="img/users-gray.png" id="users-gray" class="responsive-img" style="width: 3%;"></a>
+                                <a href="#/pos-users"><img src="img/users-blue.png" id="users-blue" class="responsive-img" style="width: 3%; display: none;"></a>
+                                <a href="#/pos-users"><img src="img/users-green.png" id="users-green" class="responsive-img" style="width: 3%; display: none;"></a>
+                                    <p id="navBarUsers" style="color: gray; width: 1%; position: relative; display: -webkit-inline-box; top: 20px; left: 30px;">{Literal}Users{/Literal}</p>
+                                    <h5 class="navBarLine">____</h5>
+                                <a href="#/receipt-settings"><img src="img/receipts-gray.png" id="receipts-gray" class="responsive-img" style="width: 3%;"></a>
+                                <a href="#/receipt-settings"><img src="img/receipts-blue.png" id="receipts-blue" class="responsive-img" style="width: 3%; display: none;"></a>
+                                <a href="#/receipt-settings"><img src="img/receipts-green.png" id="receipts-green" class="responsive-img" style="width: 3%; display: none;"></a>
+                                    <p id="navBarReceipts" style="color: gray; width: 1%; position: relative; display: -webkit-inline-box; top: 20px; left: 45px;">{Literal}Receipts{/Literal}</p>
+                                    <h5 class="navBarLine">____</h5>
+                                <a href="#/product-lines"><img src="img/items-gray.png" id="items-gray" class="responsive-img" style="width: 3%;"></a>
+                                <a href="#/product-lines"><img src="img/items-blue.png" id="items-blue" class="responsive-img" style="width: 3%;  display: none;"></a>
+                                <a href="#/product-lines"><img src="img/items-green.png" id="items-green" class="responsive-img" style="width: 3%; display: none;"></a>
+                                    <p id="navBarProducts" style="color: gray; width: 1%; position: relative; display: -webkit-inline-box; top: 20px; left: 45px;">{Literal}Products{/Literal}</p>
+                                    <h5 class="navBarLine">____</h5>
+                                <img src="img/complete-gray.png" id="complete-gray" class="responsive-img" style="width: 3%;">
+                                <img src="img/complete-blue.png" id="complete-blue" class="responsive-img" style="width: 3%; display: none;">
+                                <img src="img/complete-green.png" id="complete-green" class="responsive-img" style="width: 3%; display: none;">
+                                    <p id="navBarCompleted" style="color: gray; width: 1%; position: relative; display: -webkit-inline-box; top: 20px; left: 50px;">{Literal}Completed{/Literal}</p>
+                            </div>
+                        </div>   
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <ul id="slide-out" class="sidenav sidenav-fixed ap-medium-blue darken-1" style="display: none; top: 10.5%; background-color: lightgray">
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li>
+
+                    </li>
+                    <li>
+                        <a href="#/company-info" class="collapsible-header waves-effect waves-light sidenav-close" style="padding-top: 20px;">
+                            <i class="material-icons ">home</i>{Literal}Home{/Literal}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" class="collapsible-header waves-effect waves-light sidenav-close" onclick="openSupportModal()">
+                            <i class="material-icons ">headset_mic</i>{Literal}Support{/Literal}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/" class="collapsible-header  waves-effect waves-light sidenav-close">
+                            <i class="material-icons ">exit_to_app</i>{Literal}Log Out{/Literal}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <div id="support-modal" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>{Literal}Contact Support{/Literal}</h4>
+                <h6>{Literal}Having an issue{/Literal}?</h6>
+                <br>
+                <h6>{Literal}Email us by filling out this form{/Literal}, {Literal}and we will have a tech best suited to help contact you{/Literal}. {Literal}You can also call our support line using the phone number at the bottom{/Literal}.</h6>
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input id="contactName" placeholder="{Literal}Contact Name{/Literal}" type="text">
+                    </div>
+                    <div class="input-field col s4">
+                        <input id="contactInfo" placeholder="{Literal}Email or Phone{/Literal} #" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="contactMessage" placeholder="{Literal}Brief Description of Issue{/Literal}" type="text">
+                    </div>
+                </div>
+                <div class="row" style="text-align: center">
+                    <u>{Literal}Reach us at {/Literal} 888-265-4767</u>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0)" class="modal-close waves-effect waves-light btn-flat" onclick="closeSupportModal()">Cancel</a>
+                <a href="javascript:void(0)" class="modal-close waves-effect waves-green right btn green" onclick="saveSupportModal()">Send</a>
+            </div>
+        </div>
+
+        <div id="instruction-modal" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h4>{Literal}Wizard Instructions{/Literal}</h4>
+
+                <h6>Instructions Go Here</h6>
+            </div>
+            <div class="modal-footer">
+                <a href="javascript:void(0)" class="modal-close waves-effect waves-light right btn-flat" onclick="closeInstructionModal()">Cancel</a>
+            </div>
+        </div>
+        
+        <main id="main-tag" class="main">
+
+        </main>
+    </div>
+    <div class="main-content"></div>
+
+    <script>
+        function openSupportModal() {
+            $('#support-modal').show();
+        }
+
+        function closeSupportModal () {
+            $('#support-modal').hide();
+        }
+
+        function saveSupportModal () {
+            var contactName = document.getElementById("contactName").value;
+            var contactInfo = document.getElementById("contactInfo").value;
+            var contactMessage = document.getElementById("contactMessage").value;
+            var sessionToken = this.getCookie();
+            if (contactName == '' || contactInfo == '' || contactMessage == '' ) {
+               alert('{Literal}All fields are required{/Literal}');
+            }
+            else {
+                var updatedModel = {
+                    contactName: contactName,
+                    contactInfo: contactInfo,
+                    contactMessage: contactMessage
+                }
+                $.ajax({
+                    url: '/data/send-email',
+                    data: {
+                        emailSupport: JSON.stringify(updatedModel),
+                        token: sessionToken
+                    },
+                    dataType: 'json',
+                    type: 'POST',
+                    
+                    success: function (data) {
+                        alert('{Literal}Email sent successfully{/Literal}.');
+                        $('#support-modal').hide();
+                    },
+
+                    error: function (e) {
+                        alert('{Literal}There was a problem sending email{/Literal}.');
+                    }
+                });
+            }
+        }
+
+        function getCookie () {
+            var nameEQ = "sessionCookie" + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0;i < ca.length;i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+            }
+        }
+    </script>
+</body>
+
+</html>

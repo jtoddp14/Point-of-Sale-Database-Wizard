@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AccuPOS Web Management</title>
+
+
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link rel="stylesheet" href="js/vuetify/dist/vuetify.min.css" />
+
+    <script src="js/jquery/dist/jquery.min.js"></script>
+    <script src="js/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/materialize-css/dist/js/materialize.js"></script>
+
+    <script src="js/vue/dist/vue.min.js"></script>
+    <script src="js/vue-router/dist/vue-router.min.js"></script>
+
+    <script src="js/vuetify/dist/vuetify.min.js"></script>
+
+    <script>
+        var homeTemplate = $.get('templates/home.vue');
+        $(document).ready(function () {
+            Vue.use(VueRouter);
+            Vue.use(Vuetify);
+            
+            var Home = { template: homeTemplate.responseText };
+            var Items = { template: '<div>Items!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>' };
+            var Analytics = { template: '<div>Analytics!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</div>' };
+            var router = new VueRouter({
+                base: '/',
+                routes: [
+                    { path: '/', component: Home },
+                    { path: '/items', component: Items },
+                    { path: '/analytics', component: Analytics }
+                ]
+            });
+
+            window.app = new Vue({
+                el: '#app',
+                router,
+                data: function () {
+                    return { drawer: null }
+                }
+            }).$mount('#app');
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-navigation-drawer app fixed v-model="drawer" class="blue darken-2" dark>
+                <div class="blue darken-1">
+                    <img src="img/accupos-logo.png" height="60px" style="padding: 1px"/>
+                </div>
+                <v-divider></v-divider>
+                <v-list dense>
+                    <v-list-tile @click="" href='/#/'>
+                        <v-list-tile-action>
+                            <v-icon>home</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Home</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <!--<v-list-group prepend-icon="account_circle">
+                        <v-list-tile slot="activator">
+                            <v-list-tile-title>Users</v-list-tile-title>
+                        </v-list-tile>
+
+                        <v-list-tile @click="">
+                            <v-list-tile-action>
+                                <v-icon>home</v-icon>
+                            </v-list-tile-action>
+                            <v-list-tile-content>
+                                <v-list-tile-title>Home</v-list-tile-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
+
+                    </v-list-group>-->
+                    <v-list-tile @click="" href='/#/analytics'>
+                        <v-list-tile-action>
+                            <v-icon>bar_chart</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Analytics</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>shopping_basket</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Items</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>people</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Customers</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>people_outline</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Users</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>account_balance</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Accounting</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>settings</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Settings</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click="">
+                        <v-list-tile-action>
+                            <v-icon>arrow_back</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Logout</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                </v-list>
+
+            </v-navigation-drawer>
+            <v-toolbar app fixed>
+                <!--<v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>-->
+                    <v-btn
+                        color="blue"
+                        dark
+                        small
+                        left
+                        relative
+                        fab
+                        @click.stop="drawer = !drawer"
+                        >
+                <v-icon>menu</v-icon>
+                </v-btn>
+            </v-toolbar>
+            <v-content>
+                <v-container fluid>
+                    <router-view></router-view>
+                </v-container>
+            </v-content>
+            <v-footer app></v-footer>
+        </v-app>
+    </div>
+</body>
+
+</html>

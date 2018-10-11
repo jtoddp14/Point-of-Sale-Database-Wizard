@@ -1,0 +1,37 @@
+{
+  "name": "wm",
+  "version": "1.0.0",
+  "description": "WM 2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "templates": "handlebars public\\templates\\ -f public\\js\\compiled_templates.js -e \"html\""
+  },
+  "author": "Jeremiah Page (jeremiah.page@accupos.com)",
+  "license": "ISC",
+  "dependencies": {
+    "aesutil": "^0.1.1",
+    "backbone": "^1.3.3",
+    "body-parser": "^1.18.3",
+    "c3": "^0.5.4",
+    "cryptojs": "^2.5.3",
+    "d3": "^5.5.0",
+    "express": "^4.16.3",
+    "gridstack": "^0.4.0",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1",
+    "jquery-ui-touch-punch": "^0.2.3",
+    "lodash": "^4.17.10",
+    "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "material-datetime-picker": "^2.4.0",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "moment": "^2.22.2",
+    "muuri": "^0.5.4",
+    "passport": "^0.4.0",
+    "rome": "^2.1.22",
+    "underscore": "^1.9.1",
+    "web-animations-js": "^2.3.1"
+  }
+}
