@@ -65,7 +65,7 @@ var RetailView = Backbone.View.extend({
             type: 'POST',
             success: function (data) {
                 that.retail = data;
-                var obj = (data.retailData);
+                var obj = JSON.parse(data.retailData);
                 that.model.set(obj);
                 that.render();
             },

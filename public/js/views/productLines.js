@@ -579,7 +579,7 @@ var ProductLinesView = Backbone.View.extend({
                 type: 'POST',
     
                 success: function (data) {
-                    if (data.results.status == "Success") {
+                    if (data.status == "Success") {
                         window.location.href = "#/items";
                     }
                 },

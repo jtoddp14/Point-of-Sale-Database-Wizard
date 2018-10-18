@@ -599,7 +599,7 @@ var POSUsersView = Backbone.View.extend({
             type: 'POST',
 
             success: function (data) {
-                if (data.results.status == "Success") {
+                if (data.status == "Success") {
                     $('#users-gray').hide();
                     $('#users-blue').hide();
                     $('#users-green').show();

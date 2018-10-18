@@ -180,7 +180,7 @@ var CompanyInfoView = Backbone.View.extend({
             type: 'POST',
             success: function (data) {
                 that.companyInfo = data.companyDetails;
-                var obj = (data.companyDetails);
+                var obj = JSON.parse(data.companyDetails);
                 that.model.set(obj);
                 that.render();
             },

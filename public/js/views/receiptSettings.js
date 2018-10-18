@@ -174,7 +174,7 @@ var ReceiptSettingsView = Backbone.View.extend({
             type: 'POST',
             success: function (data) {
                 that.receiptSettings = data;
-                var obj = (data.receiptDetails);
+                var obj = JSON.parse(data.receiptDetails);
                 that.model.set(obj);
                 that.render();
                 that.getRetailSettings();
@@ -204,10 +204,9 @@ var ReceiptSettingsView = Backbone.View.extend({
             dataType: 'json',
             type: 'POST',
             success: function (data) {
-                
-                var retailObj = (data.retailData);
-                that.model.attributes.quantityDecimalNumber = retailObj.quantityDecimalNumber;
-                that.model.attributes.currencyDecimalNumber = retailObj.priceDecimalNumber;
+                var obj = JSON.parse(data.retailData);
+                that.model.attributes.quantityDecimalNumber = obj.quantityDecimalNumber;
+                that.model.attributes.currencyDecimalNumber = obj.priceDecimalNumber;
                 that.changeModelSettings();
             },
             error: function (e) {

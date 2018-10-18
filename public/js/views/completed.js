@@ -76,7 +76,7 @@ var CompletedView = Backbone.View.extend({
             type: 'POST',
             success: function (data) {
                 that.companyInfo = data.companyDetails;
-                var obj = (data.companyDetails);
+                var obj = JSON.parse(data.companyDetails);
                 that.model.attributes.companyName = obj.companyName;
                 that.model.attributes.address1 = obj.address1;
                 that.model.attributes.city = obj.city;
@@ -109,7 +109,7 @@ var CompletedView = Backbone.View.extend({
             type: 'POST',
             success: function (data) {
                 that.retail = data;
-                var obj = (data.retailData);
+                var obj = JSON.parse(data.retailData);
                 that.model.attributes.priceDecimalNumber = obj.priceDecimalNumber;
                 that.model.attributes.quantityDecimalNumber = obj.quantityDecimalNumber;
                 that.model.attributes.totalDecimalNumber = obj.totalDecimalNumber;
@@ -188,7 +188,7 @@ var CompletedView = Backbone.View.extend({
             type: 'POST',
             success: function (data) {
                 that.receiptSettings = data;
-                var obj = (data.receiptDetails);
+                var obj = JSON.parse(data.receiptDetails);
                 that.model.attributes.printLogo = obj.printLogo;
                 that.model.attributes.printCustomerDetails = obj.printCustomerDetails;
                 that.model.attributes.receiptMessage = obj.receiptMessage;
